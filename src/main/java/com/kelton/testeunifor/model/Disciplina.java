@@ -20,6 +20,8 @@ public class Disciplina {
 
     private String nome;
 
+    private Integer credito;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
