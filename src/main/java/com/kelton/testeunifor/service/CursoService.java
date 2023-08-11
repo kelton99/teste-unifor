@@ -47,7 +47,9 @@ public class CursoService {
                 .map(DisciplinaDTO::mapToEntity)
                 .collect(Collectors.toList()));
 
-        return CursoDTO.mapToDto(this.cursoRepository.save(CursoDTO.mapToEntity(cursoDTO)));
+        return CursoDTO.mapToDto(
+                this.cursoRepository.save(CursoDTO.mapToEntity(cursoDTO))
+        );
     }
 
     public void deleteCursoById(Long id) {

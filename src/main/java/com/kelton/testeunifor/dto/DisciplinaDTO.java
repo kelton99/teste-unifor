@@ -25,6 +25,11 @@ public class DisciplinaDTO {
     }
 
     public static Disciplina mapToEntity(DisciplinaDTO disciplinaDTO) {
-        return null;
+        return Disciplina.builder()
+                .id(disciplinaDTO.getId())
+                .nome(disciplinaDTO.getNome())
+                .credito(disciplinaDTO.getCredito())
+                .build();
     }
+
 }
