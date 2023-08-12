@@ -24,7 +24,7 @@ public class MatrizCurricularService {
                 .collect(Collectors.toList());
     }
 
-    public MatrizCurricularDTO findCursoById(Long id) {
+    public MatrizCurricularDTO findMatrizById(Long id) {
         return MatrizCurricularDTO.mapToDto(this.matrizCurricularRepository.findById(id).orElseThrow(
                 () -> new EntidadeNaoEncontradaException(String.format("Matriz Curricular com id %d não foi encontrado", id)))
         );
@@ -52,7 +52,7 @@ public class MatrizCurricularService {
         return MatrizCurricularDTO.mapToDto(this.matrizCurricularRepository.save(matrizCurricular));
     }
 
-    public void deleteCursoById(Long id) {
+    public void deleteMatrizById(Long id) {
         final var matrizCurricular = this.matrizCurricularRepository.findById(id).orElseThrow(
                 () -> new EntidadeNaoEncontradaException(String.format("Matriz Curricular com id %d não foi encontrado", id))
         );
