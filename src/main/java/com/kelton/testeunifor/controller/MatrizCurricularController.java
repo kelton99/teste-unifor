@@ -17,7 +17,7 @@ public class MatrizCurricularController {
 
     private final MatrizCurricularService matrizCurricularService;
 
-    @GetMapping("/")
+    @GetMapping()
     public ResponseEntity<List<MatrizCurricularDTO>> findMatrizes() {
         return ResponseEntity.status(HttpStatus.OK).body(this.matrizCurricularService.findMatrizes());
     }
@@ -27,7 +27,7 @@ public class MatrizCurricularController {
         return ResponseEntity.status(HttpStatus.OK).body(this.matrizCurricularService.findMatrizById(id));
     }
 
-    @PostMapping("/")
+    @PostMapping()
     public ResponseEntity<MatrizCurricularDTO> createMatriz(@RequestBody MatrizCurricularDTO matrizCurricularDTO) {
         return ResponseEntity.status(HttpStatus.CREATED).body(this.matrizCurricularService.saveMatrizCurricular(matrizCurricularDTO));
     }

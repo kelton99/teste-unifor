@@ -17,7 +17,7 @@ public class DisciplinaController {
 
     private final DisciplinaService disciplinaService;
 
-    @GetMapping("/")
+    @GetMapping()
     public ResponseEntity<List<DisciplinaDTO>> findDisciplinas() {
         return ResponseEntity.status(HttpStatus.OK).body(this.disciplinaService.findDisciplinas());
     }
@@ -27,7 +27,7 @@ public class DisciplinaController {
         return ResponseEntity.status(HttpStatus.OK).body(this.disciplinaService.findDisciplinaById(id));
     }
 
-    @PostMapping("/")
+    @PostMapping()
     public ResponseEntity<DisciplinaDTO> createDisciplina(@RequestBody DisciplinaDTO disciplinaDTO) {
         return ResponseEntity.status(HttpStatus.CREATED).body(this.disciplinaService.saveDisciplina(disciplinaDTO));
     }

@@ -17,7 +17,7 @@ public class SemestreController {
 
     private final SemestreService semestreService;
 
-    @GetMapping("/")
+    @GetMapping()
     public ResponseEntity<List<SemestreDTO>> findSemestres() {
         return ResponseEntity.status(HttpStatus.OK).body(this.semestreService.findSemestres());
     }
@@ -27,7 +27,7 @@ public class SemestreController {
         return ResponseEntity.status(HttpStatus.OK).body(this.semestreService.findSemestreById(id));
     }
 
-    @PostMapping("/")
+    @PostMapping()
     public ResponseEntity<SemestreDTO> createSemestre(@RequestBody SemestreDTO semestreDTO) {
         return ResponseEntity.status(HttpStatus.CREATED).body(this.semestreService.saveSemestre(semestreDTO));
     }

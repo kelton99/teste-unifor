@@ -16,7 +16,7 @@ public class CursoController {
 
     private final CursoService cursoService;
 
-    @GetMapping("/")
+    @GetMapping()
     public ResponseEntity<List<CursoDTO>> findCursos() {
         return ResponseEntity.status(HttpStatus.OK).body(this.cursoService.findCursos());
     }
@@ -26,7 +26,7 @@ public class CursoController {
         return ResponseEntity.status(HttpStatus.OK).body(this.cursoService.findCursoById(id));
     }
 
-    @PostMapping("/")
+    @PostMapping()
     public ResponseEntity<CursoDTO> createCurso(@RequestBody CursoDTO cursoDTO) {
         return ResponseEntity.status(HttpStatus.CREATED).body(this.cursoService.saveCurso(cursoDTO));
     }

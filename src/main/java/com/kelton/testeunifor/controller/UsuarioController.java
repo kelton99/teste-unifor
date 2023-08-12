@@ -17,7 +17,7 @@ public class UsuarioController {
 
     private final UsuarioService usuarioService;
 
-    @GetMapping("/")
+    @GetMapping()
     public ResponseEntity<List<Usuario>> findSemestres() {
         return ResponseEntity.status(HttpStatus.OK).body(this.usuarioService.findUsuarios());
     }
@@ -27,7 +27,7 @@ public class UsuarioController {
         return ResponseEntity.status(HttpStatus.OK).body(this.usuarioService.findUsuarioById(id));
     }
 
-    @PostMapping("/")
+    @PostMapping()
     public ResponseEntity<Usuario> createSemestre(@RequestBody Usuario usuario) {
         return ResponseEntity.status(HttpStatus.CREATED).body(this.usuarioService.saveUsuario(usuario));
     }
