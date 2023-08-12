@@ -48,7 +48,7 @@ public class CursoService {
                 .collect(Collectors.toList()));
 
         return CursoDTO.mapToDto(
-                this.cursoRepository.save(CursoDTO.mapToEntity(cursoDTO))
+                this.cursoRepository.save(curso)
         );
     }
 

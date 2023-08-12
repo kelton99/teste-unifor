@@ -39,11 +39,11 @@ public class DisciplinaService {
                 () -> new EntidadeNaoEncontradaException(String.format("Disciplina com id %d não foi encontrado", id))
         );
 
-        disciplina.setNome(disciplina.getNome());
-        disciplina.setCredito(disciplina.getCredito());
+        disciplina.setNome(disciplinaDTO.getNome());
+        disciplina.setCredito(disciplinaDTO.getCredito());
 
         return DisciplinaDTO.mapToDto(
-                this.disciplinaRepository.save(DisciplinaDTO.mapToEntity(disciplinaDTO))
+                this.disciplinaRepository.save(disciplina)
         );
     }
 
