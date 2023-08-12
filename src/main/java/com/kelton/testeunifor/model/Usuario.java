@@ -1,9 +1,15 @@
 package com.kelton.testeunifor.model;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
 @Table(name = "usuario")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Usuario {
 
     @Id
@@ -11,8 +17,6 @@ public class Usuario {
     private Long id;
 
     private String nome;
-
-    private String senha;
 
     @Enumerated(EnumType.STRING)
     private Cargo cargo;
